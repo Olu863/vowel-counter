@@ -36,7 +36,7 @@ function App() {
         onChange={(e) => setText(e.target.value)}
         style={{
           padding: "15px",
-          fontSize: "32cpx",
+          fontSize: "32px",
           borderRadius: "8px",
           border: "1px solid #555",
           backgroundColor: "#2c2c2c",
