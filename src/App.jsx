@@ -21,7 +21,7 @@ function App() {
   const getColor = (vowel) => {
   const count = vowels[vowel];
 
-  if (count === 0) return "#444"; // default ash
+  if (count === 0) return "#f5ebeb"; // default ash
 
   const uniqueCounts = [...new Set(Object.values(vowels))]
     .filter(n => n > 0)
@@ -31,7 +31,7 @@ function App() {
   if (count === uniqueCounts[1]) return "#f26908"; // orange
   if (count === uniqueCounts[2]) return "#f5c021"; // yellow
 
-  return "#444";
+  return "#f3ecec";
 };
 
 
@@ -49,7 +49,7 @@ function App() {
           padding: "15px",
           fontSize: "32px",
           borderRadius: "8px",
-          border: "1px solid #555",
+          border: "1px solid #1c4401",
           backgroundColor: "#300033",
           color: "white"
         }}
