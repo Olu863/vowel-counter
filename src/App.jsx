@@ -19,11 +19,11 @@ function App() {
   const sorted = Object.entries(vowels).sort((a, b) => b[1] - a[1]);
 
   const getColor = (vowel) => {
-  const count = counts[vowel];
+  const count = vowels[vowel];
 
   if (count === 0) return "#444"; // default ash
 
-  const uniqueCounts = [...new Set(Object.values(counts))]
+  const uniqueCounts = [...new Set(Object.values(vowels))]
     .filter(n => n > 0)
     .sort((a, b) => b - a);
 
@@ -34,7 +34,6 @@ function App() {
   return "#444";
 };
 
-</div>
 
   return (
     <div style={{ textAlign: "center", padding: "40px", fontFamily: "sans-serif" }}>
@@ -64,8 +63,7 @@ function App() {
           justifyContent: "center",
           gap: "15px",
           flexWrap: "wrap",
-          backgroundColor:getColor(vowel) }}>
-  {counts[vowel]}
+        }}
         
       {Object.entries(vowels).map(([vowel, count]) => (
           <div
