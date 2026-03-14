@@ -64,7 +64,7 @@ function App() {
           gap: "15px",
           flexWrap: "wrap",
         }}
-        
+        >
       {Object.entries(vowels).map(([vowel, count]) => (
           <div
             key={vowel}
