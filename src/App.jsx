@@ -49,7 +49,7 @@ function App() {
           padding: "15px",
           fontSize: "32px",
           borderRadius: "8px",
-          border: "1px solid #1c4401",
+          border: "7px solid #1c4401",
           backgroundColor: "#300033",
           color: "white"
         }}
