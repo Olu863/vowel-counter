@@ -19,11 +19,22 @@ function App() {
   const sorted = Object.entries(vowels).sort((a, b) => b[1] - a[1]);
 
   const getColor = (vowel) => {
-    if (sorted[0][0] === vowel) return "#0f327e";   // blue
-    if (sorted[1][0] === vowel) return "#f26908";   // orange
-    if (sorted[2][0] === vowel) return "#f5c021";   // yellow
-    return "#444";
-  };
+  const count = counts[vowel];
+
+  if (count === 0) return "#444"; // default ash
+
+  const uniqueCounts = [...new Set(Object.values(counts))]
+    .filter(n => n > 0)
+    .sort((a, b) => b - a);
+
+  if (count === uniqueCounts[0]) return "#0f327e"; // blue
+  if (count === uniqueCounts[1]) return "#f26908"; // orange
+  if (count === uniqueCounts[2]) return "#f5c021"; // yellow
+
+  return "#444";
+};
+
+</div>
 
   return (
     <div style={{ textAlign: "center", padding: "40px", fontFamily: "sans-serif" }}>
@@ -40,7 +51,7 @@ function App() {
           fontSize: "32px",
           borderRadius: "8px",
           border: "1px solid #555",
-          backgroundColor: "#2c2c2c",
+          backgroundColor: "#300033",
           color: "white"
         }}
       />
@@ -53,9 +64,9 @@ function App() {
           justifyContent: "center",
           gap: "15px",
           flexWrap: "wrap",
-          backgroundColor: "#444"
-        }}
-        >
+          backgroundColor:getColor(vowel) }}>
+  {counts[vowel]}
+        
       {Object.entries(vowels).map(([vowel, count]) => (
           <div
             key={vowel}
