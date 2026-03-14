@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 
 function App() {
@@ -18,9 +19,9 @@ function App() {
   const sorted = Object.entries(vowels).sort((a, b) => b[1] - a[1]);
 
   const getColor = (vowel) => {
-    if (sorted[0][0] === vowel) return "#2563eb";   // blue
-    if (sorted[1][0] === vowel) return "#f97316";   // orange
-    if (sorted[2][0] === vowel) return "#eab308";   // yellow
+    if (sorted[0][0] === vowel) return "#0f327e";   // blue
+    if (sorted[1][0] === vowel) return "#f26908";   // orange
+    if (sorted[2][0] === vowel) return "#f5c021";   // yellow
     return "#444";
   };
 
@@ -51,10 +52,11 @@ function App() {
           display: "flex",
           justifyContent: "center",
           gap: "15px",
-          flexWrap: "wrap"
+          flexWrap: "wrap",
+          backgroundColor: "#444"
         }}
-      >
-        {Object.entries(vowels).map(([vowel, count]) => (
+        >
+      {Object.entries(vowels).map(([vowel, count]) => (
           <div
             key={vowel}
             style={{
@@ -67,7 +69,7 @@ function App() {
               borderRadius: "6px",
               fontSize: "20px",
               fontWeight: "bold",
-              color: "white"
+              color: "black"
             }}
           >
             {vowel.toUpperCase()} : {count}
